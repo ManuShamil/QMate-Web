@@ -1,0 +1,22 @@
+{% extends "store_index.html" %}
+{% block body %}
+    <form action="/straddspslt_post" method="post"><table class="table">
+  <tr>
+    <td width="150px">Opening_time</td>
+    <td>
+      <input type="time" name="textfield" id="textfield" class="form-control" required/></td>
+  </tr>
+  <tr>
+    <td>Closing_time</td>
+    <td>
+      <input type="time" name="textfield1" id="textfield1" class="form-control" required/></td>
+  </tr>
+  <tr>
+    <td></td>
+      <td>  <input type="submit" name="button" id="button" value="CREATE_SLOTS" class="btn btn-success" />
+ </td>
+    </tr>
+</table>
+</form>
+{% endblock %}
+

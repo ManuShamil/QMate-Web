@@ -1,0 +1,16 @@
+{% extends "admin_index.html" %}
+{% block body %}
+<form action="/adminsndrply_post" method="post"><table class="table table-bordered">
+  <tr>
+    <td width="150px">reply</td>
+    <td><textarea name="txt1" class="form-control" required></textarea></td>
+  </tr>
+  <tr>
+      <td></td>
+    <td >
+      <input type="submit" name="button" id="button" value="send" class="btn btn-success"/>
+    </td>
+    </tr>
+</table>
+</form>
+{% endblock %}

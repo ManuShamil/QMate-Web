@@ -1,0 +1,35 @@
+{% extends "admin_index.html" %}
+{% block body %}
+
+
+<form action="/viewregstrpost" method="post">
+    <table class="pull-left">
+    <td><input type="text" name="search" class="form-control" required placeholder="Search here by Name"></td>
+    <td><input type="submit" value="Search" class="btn btn-success"> </td>
+</table>
+<br>
+
+<table class="table table-bordered">
+  <tr>
+    <th>Slno</th>
+    <th>Storename</th>
+    <th>Place</th>
+    <th>Post</th>
+    <th>Pin</th>
+    <th>Phone</th>
+    <th>Email</th>
+  </tr>
+     {% for i in data %}
+  <tr>
+    <td width="50px">{{ loop.index }}&nbsp;</td>
+    <td>{{ i['store_name'] }}&nbsp;</td>
+      <td>&nbsp;{{ i['place'] }}</td>
+      <td>{{ i['post'] }}</td>
+      <td>{{ i['pin'] }}&nbsp;</td>
+    <td>&nbsp;{{ i['phone'] }}&nbsp;</td>
+    <td>{{ i['email'] }}&nbsp;</td>
+  </tr>
+    {% endfor %}
+</table>
+</form>
+{% endblock %}

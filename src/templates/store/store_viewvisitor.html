@@ -1,0 +1,43 @@
+{% extends "store_index.html" %}
+{% block body %}
+<form action="/strviepost" method="post">
+
+
+
+<table class="pull-left">
+    <tr>
+        <td>From</td>
+        <td><input type="date" name="from" class="form-control" required></td>
+        <td>To</td>
+        <td><input type="date" name="to" class="form-control" required></td>
+        <td>
+            <input type="submit" value="Filter" class="btn btn-success">
+        </td>
+    </tr>
+
+</table>
+<br>
+
+
+    <table class="table table-bordered">
+  <tr>
+    <th>Slno</th>
+         <th>Date</th>
+    <th>User-name</th>
+    <th>From_time</th>
+    <th>To_time</th>
+
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td width="50px">&nbsp;{{ loop.index }}</td>
+       <td>&nbsp;{{ i['Date'] }}</td>
+      <td>&nbsp;{{ i['user_name'] }}</td>
+      <td>&nbsp;{{ i['From_time'] }}</td>
+      <td>&nbsp;{{ i['T0_time'] }}</td>
+
+  </tr>
+    {% endfor %}
+</table>
+</form>
+{% endblock %}

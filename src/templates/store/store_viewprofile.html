@@ -1,0 +1,41 @@
+{% extends "store_index.html" %}
+{% block body %}
+    <form action="strviwprof" method="get"><table class="table table-bordered">
+
+
+  <tr>
+    <td width="150px">Store_name</td>
+    <td><p>
+     {{ data['store_name'] }}
+
+  </tr>
+  <tr>
+    <td>Place</td>
+    <td>{{ data['place'] }}
+
+  </tr>
+  <tr>
+    <td>Post</td>
+    <td><p>
+    {{ data['post'] }}
+
+    </p></td>
+  </tr>
+  <tr>
+    <td>Pin</td>
+    <td>{{ data['pin'] }}
+
+  </tr>
+  <tr>
+    <td>Phone</td>
+    <td>{{ data['phone'] }}
+
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td>{{ data['email'] }}
+
+  </tr>
+</table>
+</form>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "admin_index.html" %}
+{% block body %}
+<form action="/adminusrvisithispost" method="post">
+
+
+
+<table class="pull-left">
+    <tr>
+        <td>From</td>
+        <td><input type="date" name="from" class="form-control" REQUIRED></td>
+        <td>To</td>
+        <td><input type="date" name="to" class="form-control" required></td>
+        <td>
+            <input type="submit" value="Filter" class="btn btn-success">
+        </td>
+    </tr>
+
+</table>
+<br>
+
+
+
+    <table class="table table-bordered">
+  <tr>
+    <th width="12px">Slno</th>
+    <th>Date</th>
+    <th>Time</th>
+{#    <th>Counter_no</th>#}
+    <th>store_info</th>
+    <th>Name</th>
+    <th>Phone</th>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>&nbsp;{{ loop.index }}&nbsp;</td>
+    <td>&nbsp;&nbsp;{{ i['date'] }}&nbsp;</td>
+    <td>{{ i['time'] }}&nbsp;</td>
+{#    <td>{{ i['counter_no'] }}&nbsp;</td>#}
+    <td>&nbsp;{{ i['store_name'] }}&nbsp;</td>
+    <td>&nbsp;{{ i['user_name'] }}&nbsp;</td>
+    <td>&nbsp;{{ i['phone'] }}&nbsp;</td>
+  </tr>
+    {% endfor %}
+</table>
+</form>
+{% endblock %}

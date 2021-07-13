@@ -1,0 +1,44 @@
+{% extends "admin_index.html" %}
+{% block body %}
+<form action="/viewcomppost" method="post">
+
+
+<table class="pull-left">
+    <tr>
+        <td>From</td>
+        <td><input type="date" class="form-control" name="from"></td>
+        <td>To</td>
+        <td><input type="date" class="form-control" name="to"></td>
+        <td><input type="submit" name="a" value="Search" class="btn btn-success"></td>
+
+    </tr>
+</table>
+<br>
+
+
+
+
+    <table class="table table-bordered">
+
+
+  <tr>
+    <th>Slno</th>
+    <th>Subject</th>
+    <th>Complaint</th>
+    <th>Customer</th>
+    <th>Date</th>
+    <th>&nbsp;</th>
+  </tr>
+       {% for i in data %}
+  <tr>
+  <td width="50px">{{ loop.index }}&nbsp;</td>
+    <td>{{ i['subject'] }}</td>
+    <td>&nbsp;{{ i['complaint'] }}&nbsp;</td>
+    <td>{{ i['user_name'] }}&nbsp;&nbsp;</td>
+    <td>&nbsp;{{ i['date'] }}&nbsp;</td>
+    <td width="50px"><a href="/adminsndrply/{{ i['complaint_id'] }}" class="btn btn-info">Reply</a></td>
+  </tr>
+        {% endfor %}
+</table>
+</form>
+{% endblock %}

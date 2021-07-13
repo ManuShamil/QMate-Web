@@ -1,0 +1,36 @@
+{% extends "admin_index.html" %}
+{% block body %}
+
+
+<form action="/" method="post">
+    <table class="pull-left">
+    <th> Covid Condition : </th><td></td>
+
+        {% if data['Status']=="YES" %}
+        <th>{{ data['Status'] }}</th>
+        {% else %}
+                <th> NO </th>
+        {% endif %}
+</table>
+<br>
+
+<table class="table table-bordered">
+   <th width="12px">Slno</th>
+    <th>Date</th>
+    <th>Time</th>
+{#    <th>Counter_no</th>#}
+    <th>store_info</th>
+
+  </tr>
+    {% for i in data3 %}
+  <tr>
+    <td>&nbsp;{{ loop.index }}&nbsp;</td>
+    <td>&nbsp;&nbsp;{{ i['date'] }}&nbsp;</td>
+    <td>{{ i['time'] }}&nbsp;</td>
+{#    <td>{{ i['counter_no'] }}&nbsp;</td>#}
+    <td>&nbsp;{{ i['store_name'] }}&nbsp;</td>
+  </tr>
+    {% endfor %}
+</table>
+</form>
+{% endblock %}

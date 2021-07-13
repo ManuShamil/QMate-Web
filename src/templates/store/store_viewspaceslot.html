@@ -1,0 +1,22 @@
+{% extends "store_index.html" %}
+{% block body %}
+<form action="strvie" method="get"><table class="table table-bordered">
+  <tr>
+    <th>#</th>
+    <th>From_time</th>
+    <th>T0_time</th>
+    <th>&nbsp;</th>
+
+
+  </tr>
+  {% for x in data %}
+  <tr>
+    <td width="50px">{{  loop.index  }}</td>
+    <td>{{ x['From_time'] }}</td>
+    <td>{{ x['T0_time'] }} </td>
+    <td width="50px"><a href="/strviwspslt_delete/{{ x['spaceslot_id'] }}" class="btn btn-info">Delete</a></td>
+  </tr>
+  {% endfor %}
+</table>
+</form>
+{% endblock %}

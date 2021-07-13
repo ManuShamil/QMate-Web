@@ -1,0 +1,85 @@
+{% extends "store_index.html" %}
+{% block body %}
+<form id="form2" name="form2" method="post" action="/storeupdtsecty" enctype="multipart/form-data">
+<table class="table table-bordered">
+  <tr>
+    <td>Name</td>
+    <td>
+    <input type="text" name="textfield" id="textfield"  required value="{{ data['security_name'] }}" class="form-control" required/></td>
+  </tr>
+  <tr>
+    <td>DOB</td>
+    <td>
+       <input type="text" name="textfield1" id="textfield"  required value="{{ data['age'] }}" class="form-control" required/></td>
+  </tr>
+
+  <tr>
+    <td width="150px">Gender</td>
+      {% if data['gender']=='Male' %}
+    <td>
+
+        <input type="radio" name="RadioGroup1" value="Male" id="RadioGroup1_0" checked />
+        Male
+
+
+        <input type="radio" name="RadioGroup1" value="Female" id="RadioGroup1_1" />
+        Female
+     </td>
+      {% else %}
+      <td>
+        <input type="radio" name="RadioGroup1" value="Male" id="RadioGroup1_0"  />
+        Male
+
+        <input type="radio" name="RadioGroup1" value="Female" id="RadioGroup1_1" checked />
+        Female</label>
+     </td>
+      {% endif %}
+  </tr>
+  <tr>
+    <td>Place</td>
+    <td>
+    <input type="text" name="textfield2" id="textfield2" value="{{ data['place'] }}"  required class="form-control" required/></td>
+  </tr>
+  <tr>
+    <td>Pin</td>
+    <td>
+    <input type="text" name="textfield3" id="textfield3" value="{{ data['pin'] }}" required class="form-control" required/></td>
+  </tr>
+  <tr>
+    <td>Post</td>
+    <td>
+    <input type="text" name="textfield4" id="textfield4" value="{{ data['post'] }}" required  class="form-control" required/></td>
+  </tr>
+  <tr>
+    <td>City</td>
+    <td>
+    <input type="text" name="textfield5" id="textfield5" value="{{ data['city'] }}" required class="form-control" required/></td>
+  </tr>
+  <tr>
+    <td>State</td>
+    <td>
+    <input type="text" name="textfield6" id="textfield6" value="{{ data['state'] }}" required class="form-control" required/></td>
+  </tr>
+  <tr>
+    <td>Photo</td>
+    <td>
+    <input type="file" name="fff" id="textfield7" class="form-control"/></td>
+  </tr>
+  <tr>
+    <td>Phone</td>
+    <td>
+    <input type="text" name="textfield9" pattern="[0-9]{10}" required id="textfield9" value="{{ data['phone'] }}" class="form-control" required/></td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td>
+    <input type="email" name="textfield10" required id="textfield10" value="{{ data['email'] }}" class="form-control" required/></td>
+  </tr>
+  <tr>
+    <td ></td>
+    <td> <input type="submit" name="button" id="button" value="Update" class="btn btn-info" />
+    </td>
+  </tr>
+</table>
+    </form>
+{% endblock %}

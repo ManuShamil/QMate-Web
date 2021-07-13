@@ -1,0 +1,28 @@
+{% extends "store_index.html" %}
+{% block body %}
+<form action="strqststus" method="get"><table class="table table-bordered">
+  <tr>
+
+    <th>#</th>
+    <th>User_name</th>
+    <th>Date</th>
+    <th>FromTime</th>
+      <th>ToTime</th>
+    <th>Status</th>
+
+
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td width="40px">{{ loop.index }}&nbsp;</td>
+    <td>{{ i['user_name'] }}&nbsp;</td>
+    <td>&nbsp;{{ i['date'] }}</td>
+    <td>&nbsp;{{ i['From_time'] }}</td>
+    <td>&nbsp;{{ i['T0_time'] }}</td>
+    <td>&nbsp;{{ i['status'] }}</td>
+
+  </tr>
+    {% endfor %}
+</table>
+</form>
+{% endblock %}
